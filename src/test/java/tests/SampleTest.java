@@ -1,17 +1,28 @@
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
-
 package tests;
 
-@org.junit.runner.RunWith(net.serenitybdd.junit.runners.SerenityRunner.class)
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
+import org.junit.After;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+
+@RunWith(SerenityRunner.class)
 public abstract class SampleTest {
-    @net.thucydides.core.annotations.Managed(driver = "chrome", uniqueSession = true)
-    private org.openqa.selenium.WebDriver driver;
-    @net.thucydides.core.annotations.Steps
-    public tests.User user;
+    @Managed(
+            driver = "chrome",
+            uniqueSession = true
+    )
+    private WebDriver driver;
+    @Steps
+    public User user;
 
-    public SampleTest() { /* compiled code */ }
+    public SampleTest() {
+    }
 
-    @org.junit.After
-    public void tearDown() { /* compiled code */ }
+    @After
+    public void tearDown() {
+        this.driver.quit();
+    }
 }
+
