@@ -1,11 +1,17 @@
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
 
 package tests;
 
-public class User {
-    @net.thucydides.core.annotations.Steps
-    public steps.MainSteps mainPage;
+import net.thucydides.core.annotations.Steps;
+import steps.MainSteps;
 
-    public User() { /* compiled code */ }
+public class User {
+    @Steps
+    public MainSteps mainPage;
+
+    public User() {
+    }
 }

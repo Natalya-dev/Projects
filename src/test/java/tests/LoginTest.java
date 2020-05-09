@@ -1,11 +1,22 @@
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
 
 package tests;
 
-public class LoginTest extends tests.SampleTest {
-    public LoginTest() { /* compiled code */ }
+import Helper.PropertiesHelper;
+import org.junit.Test;
 
-    @org.junit.Test
-    public void loginTest() { /* compiled code */ }
+public class LoginTest extends SampleTest {
+
+    @Test
+    public void loginTest() {
+        user.mainPage.openMainPage();
+        user.mainPage.clickOnSignInButton();
+        user.mainPage.checkText();
+        user.mainPage.fillInEmailAddressField (PropertiesHelper.INSTANCE.getProperty("email"));
+        user.mainPage.fillInPasswordField (PropertiesHelper.INSTANCE.getProperty("password"));
+    }
 }
+
