@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package steps;
 
 import net.thucydides.core.annotations.Step;
@@ -21,9 +16,7 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void openMainPage() {
-        this.onPage.openMainPage();
-    }
+    public void openMainPage() { this.onPage.openMainPage(); }
 
     @Step
     public void checkText() {
@@ -38,5 +31,11 @@ public class MainSteps extends ScenarioSteps {
 
             }
         }
+    }
+
+    public void fillInEmailAddressField(String email) {
+    }
+
+    public void fillInPasswordField(String password) {
     }
 }

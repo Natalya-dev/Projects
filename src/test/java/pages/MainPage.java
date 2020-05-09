@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
@@ -14,12 +9,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @DefaultUrl("http://automationpractice.com/index.php")
-public class MainPage extends BasePage {
+public class MainPage<Webelement> extends BasePage {
     @FindBy(css = "a.login")
 
     private WebElement signInButton;
 
-    @FindBy (xpath = ("//*[@id='create-account_form']/div/p")
+    @FindBy (xpath = ("//*[@id='create-account_form']/div/p"))
             private WebElement createAnAccountText;
     @FindBy (id = "email")
             private Webelement emailAddressField;
