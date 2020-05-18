@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package tests;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -14,20 +9,15 @@ import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
 public abstract class SampleTest {
-    @Managed(
-            driver = "chrome",
-            uniqueSession = true
-    )
-    private WebDriver driver;
-    @Steps
-    public User user;
 
-    public SampleTest() {
-    }
+@Managed(driver = "chrome", uniqueSession = true)
+private WebDriver driver;
 
-    @After
-    public void tearDown() {
-        this.driver.quit();
+@Steps
+public User user;
+
+@After
+public void tearDown() {
+driver.quit();
     }
 }
-
