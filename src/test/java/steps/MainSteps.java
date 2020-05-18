@@ -5,37 +5,31 @@ import net.thucydides.core.steps.ScenarioSteps;
 import pages.MainPage;
 
 public class MainSteps extends ScenarioSteps {
-    private MainPage onPage;
 
-    public MainSteps() {
+private MainPage onPage;
+
+@Step
+public void clickOnSignInButton() {
+onPage.clickOnSignInButton();
     }
 
-    @Step
-    public void clickOnSignInButton() {
-        this.onPage.clickOnSignInButton();
+@Step
+public void openMainPage() {
+onPage.openMainPage();
     }
 
-    @Step
-    public void openMainPage() { this.onPage.openMainPage(); }
-
-    @Step
-    public void checkText() {
-        onPage.checkText () ;
-        @Step
-        public void fillInEmailAddressField (String email) {
-            onPage.fillInEmailAddressField (email);
-
-            @Step
-                    public void fillInPasswordField (String password) {
-                onPage.fillInPasswordField ();
-
-            }
-        }
+@Step
+public void fillEmailAddressField(String email) {
+onPage.fillEmailAddressField(email);
     }
 
-    public void fillInEmailAddressField(String email) {
+@Step
+public void fillPasswordField(String password){
+onPage.fillPasswordField(password);
     }
 
-    public void fillInPasswordField(String password) {
+@Step
+public void checkText(){
+onPage.checkText();
     }
 }
