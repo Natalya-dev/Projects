@@ -32,4 +32,19 @@ public class MainSteps extends ScenarioSteps {
     public void checkText(){
         onPage.checkText();
     }
+    
+    @Step
+    public void clickOnSubmitLoginButton () { //////new
+        onPage.clickOnSubmitLoginButton();
+    }
+
+    @Step
+    public void clickOnWomenTab () {  //////new
+        onPage.clickOnWomenTab ();
+    }
+    
+    @Step
+    public void checkOrangeColorsOnItems () {  /////new
+        onPage.checkOrangeColorsOnItems();
+    }
 }
