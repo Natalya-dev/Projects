@@ -9,43 +9,49 @@ import java.util.regex.Pattern;
 
    @DefaultUrl("http://automationpractice.com/index.php")
 
-   public class MainPage<Webelement> extends BasePage {
-    
-    @FindBy(css = "a.login")
+   public class MainPage extends BasePage{
+  
+    @FindBy(css = "a.login")  // Указываем веб элемент и его название:
     private WebElement signInButton;
 
-    @FindBy (xpath = ("//*[@id='create-account_form']/div/p"))
-    private WebElement createAnAccountText;
-    
-    @FindBy (id = "email")
-    private Webelement emailAddressField;
-    
-    @FindBy (id = "passwd")
+    @FindBy(id = "email")
+    private WebElement emailField;
+
+    @FindBy(id = "passwd")
     private WebElement passwordField;
 
-    public MainPage(WebDriver driver) { super(driver); }
+    @FindBy(xpath = "//*[@id='create-account_form']/div/p")
+    private WebElement createAccountText;
+   
+    public MainPage(WebDriver driver) {
+        super(driver);
+    }
 
-    public void openMainPage() { open(); }
-    
-    public void clickOnSignInButton() {element(signInButton).click();
+    public void openMainPage() {
+        open();
+    }
+ 
+    public void clickOnSignInButton() {
+    element(signInButton).click();
+    }
+   
+    public void fillEmailAddressField(String email){
+    element(emailField).sendKeys(email);
+    }
+   
+    public void fillPasswordField(String password){
+    element(passwordField).sendKeys(password);
+    }
 
-    public void checkText() {
-    String text = element(signInButton).getText();
-    Pattern pattern = Pattern.compile("(^Please\\senter\\s)");
-    Matcher matcher = pattern.matcher(text);
-            if(matcher.find()) {
-                System.out.println("Нашел");
-            } else {
-                System.out.println("Нe нашел");
-            }
-        }
-       
-    public void fillInEmailAddressField (String email) {
-    element (emailAddressField).sendKeys(email);
-        }
+    public void checkText(){
 
-     public void fillInPasswordField (String password) {
-     element (passwordField).sendKeys(password);
+     String text = element(createAccountText).getText();
+     Pattern pattern = Pattern.compile("(^Please\\senter\\s)");
+     Matcher matcher = pattern.matcher(text);
+        if(matcher.find()){
+            System.out.println("FOUND");
+        }else {
+            System.out.println("NOT FOUND");
         }
     }
 }
