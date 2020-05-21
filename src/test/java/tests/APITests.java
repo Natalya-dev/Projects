@@ -9,6 +9,4 @@ public class APITests {
     public void verifyHTTPSStatusCode200() {
         given().when ().get ("https://jsonplaceholder.typicode.com/posts").then().assertThat().statusCode(200);
     }
-
-
 }
