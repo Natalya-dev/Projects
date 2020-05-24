@@ -32,19 +32,59 @@ public class MainSteps extends ScenarioSteps {
     public void checkText(){
         onPage.checkText();
     }
-    
     @Step
-    public void clickOnSubmitLoginButton () { //////new
+    public void clickOnSubmitLoginButton () { 
         onPage.clickOnSubmitLoginButton();
     }
 
     @Step
-    public void clickOnWomenTab () {  //////new
+    public void clickOnWomenTab () {  
         onPage.clickOnWomenTab ();
     }
-    
+
     @Step
-    public void checkOrangeColorsOnItems () {  /////new
+    public void checkOrangeColorsOnItems () {  
         onPage.checkOrangeColorsOnItems();
+    }
+
+    @Step
+    public void checkEmailTest () {   /////// TASK
+        onPage.checkEmailTest();
+    }
+
+    @Step
+    public void checkInvalidEmailTest () {  ///// TASK
+        onPage.checkInvalidEmailTest();
+
+    }
+
+    @Step
+    public void checkWithoutEmailTest () {  ///// TASK
+        onPage.checkWithoutEmailTest();
+    }
+
+    @Step
+    public void clickOnWomenButton () { //// TASK
+        onPage.clickOnWomenButton();
+    }
+
+    @Step
+    public void clickOnDressesTab () {  //// TASK
+        onPage.clickOnDressesTab  ();
+    }
+
+    @Step
+    public void clickOnCasualDressesTab () { ////// TASK
+        onPage.clickOnCasualDressesTab();
+    }
+
+    @Step
+    public void clickOnAddToCartButton () { ////// TASK
+        onPage.clickOnAddToCartButton();
+    }
+
+    @Step
+    public void checkCartTest () { ////// TASK
+        onPage.checkCartTest();
     }
 }
