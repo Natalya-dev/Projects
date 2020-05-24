@@ -9,10 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import static org.junit.Assert.assertEquals;
 
-@DefaultUrl("http://automationpractice.com/index.php")
+   @DefaultUrl("http://automationpractice.com/index.php")
 
-public class MainPage extends BasePage{
+    public class MainPage extends BasePage{
 
     @FindBy(css = "a.login")
     private WebElement signInButton;
@@ -23,17 +24,38 @@ public class MainPage extends BasePage{
     @FindBy(id = "passwd")
     private WebElement passwordField;
 
-    @FindBy (id="SubmitLogin")  //////new//////
+    @FindBy (id="SubmitLogin") 
     private WebElement getSignInButtonOnLoginPage;
 
-    @FindBy (css ="a[title='Women']")  /////new
+    @FindBy (css ="a[title='Women']")  
     private WebElement womenTab;
 
-    @FindBy (css = "a[style=' style='background:#F39C11;']") ////new
+    @FindBy (css = "a[style=' style='background:#F39C11;']") 
     private WebElement orangeBox;
 
-    @FindBy (css ="ul[class='color_to_pick_list clearfix']") //////new
+    @FindBy (css ="ul[class='color_to_pick_list clearfix']") 
     private List<WebElement> colorBoxes;
+
+    @FindBy (css = "[class='sf-with-ul']") ///// TASK
+    private WebElement womenButton;
+
+    @FindBy (css = "[class=\"row addresses-lists\"]") /////// TASK
+    private WebElement myAccount;
+
+    @FindBy (xpath = "//div[@class='alert alert-danger']/ol/li")  ////// TASK
+    private WebElement errorEmail;
+
+    @FindBy (xpath = "//*[@id='categories_block_left']/div/ul/li[2]") ////// TASK
+    private  WebElement dressesTab;
+
+    @FindBy (xpath = "//*[@id='categories_block_left']/div/ul/li[1]/a") ///// TASK
+    private WebElement casualDressesTab;
+
+    @FindBy (xpath = "//*[@id='center_column']/ul/li/div/div[2]/div[2]/a[1]") ///// TASK
+    private  WebElement addToCartButton;
+
+    @FindBy (xpath = "//*[@id=\"center_column\"]/h1/span[2]") ///// TASK
+    private WebElement textItemInCart;
 
     @FindBy(xpath = "//*[@id='create-account_form']/div/p")
     private WebElement createAccountText;
@@ -49,33 +71,74 @@ public class MainPage extends BasePage{
     public void clickOnSignInButton() {
         element(signInButton).click();
     }
-
+   
     public void fillEmailAddressField(String email){
         element(emailField).sendKeys(email);
     }
- 
+   
     public void fillPasswordField(String password){
         element(passwordField).sendKeys(password);
     }
 
-    public void clickOnSubmitLoginButton () {  //////////new
+    public void clickOnSubmitLoginButton () { 
         element(getSignInButtonOnLoginPage).click();
     }
-    public void clickOnWomenTab() {   //////new
+
+    public void clickOnWomenTab() {   
         element(womenTab).click();
     }
-    private List<WebElement> getColorBoxes () {   /////new
+
+    private List<WebElement> getColorBoxes () {   
         return colorBoxes;
     }
 
-    public void checkOrangeColorsOnItems () {   /////new
+    public void clickOnWomenButton () {
+        element (womenButton).click();
+    }
+
+    public void clickOnDressesTab () { //////  TASK
+        element(dressesTab).click();
+    }
+
+     public void clickOnCasualDressesTab () { ////// TASK
+        element(casualDressesTab).click();
+    }
+
+     public void clickOnAddToCartButton () { /////// TASK
+        element(addToCartButton).click();
+    }
+
+     public void checkOrangeColorsOnItems () {   
         int counter = 0;
         for (int i =0; 1 < getColorBoxes().size();i++) {
             if (getColorBoxes().get(i).findElements(By.cssSelector("a[style='background:#F39C11;']")).size() == 1) {
                 counter ++;
             }
         }
-        Assert.assertEquals(3, counter);
+        assertEquals(3, counter);
+    }
+
+     public void checkEmailTest () { //////// TASK
+       String textMyAccount = element (myAccount).getText();
+       Assert.assertEquals("ORDER HISTORY AND DETAILS\n" +
+               "MY CREDIT SLIPS\n" +
+               "MY ADDRESSES\n" +
+               "MY PERSONAL INFORMATION\n" +
+               "MY WISHLISTS",textMyAccount);
+    }
+
+     public void checkInvalidEmailTest () { ///// TASK
+        String textErrorEmail = element (errorEmail).getText();
+        Assert.assertEquals ("Invalid email address.",textErrorEmail);
+    }
+
+    public void checkWithoutEmailTest () { ////// TASK
+        String textWithoutEmail = element (errorEmail).getText();
+        Assert.assertEquals ("Authentication failed",textWithoutEmail);
+    }
+     public void checkCartTest () {
+        String textProductInCart = element (textItemInCart).getText();
+         Assert.assertEquals ("There is 1 product.",textProductInCart);
     }
 
     public void checkText(){
@@ -85,6 +148,7 @@ public class MainPage extends BasePage{
         if(matcher.find()){
             System.out.println("FOUND");
         }else {
+            //Если фолс:
             System.out.println("NOT FOUND");
         }
     }
