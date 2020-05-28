@@ -8,16 +8,20 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
+
 public abstract class SampleTest {
 
-@Managed(driver = "chrome", uniqueSession = true)
-private WebDriver driver;
+ 
+    @Managed(driver = "chrome", uniqueSession = true)
 
-@Steps
-public User user;
+    private WebDriver driver;
 
-@After
-public void tearDown() {
-driver.quit();
+    @Steps
+    public User user;
+
+  
+    @After
+    public void tearDown() {
+        driver.quit();
     }
 }
