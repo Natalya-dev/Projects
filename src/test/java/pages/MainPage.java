@@ -4,12 +4,10 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @DefaultUrl("http://automationpractice.com/index.php")
-
 public class MainPage extends BasePage{
 
     @FindBy(css = "a.login")
@@ -57,7 +55,6 @@ public class MainPage extends BasePage{
             //Если тру:
             System.out.println("FOUND");
         }else {
-           
             System.out.println("NOT FOUND");
         }
     }
