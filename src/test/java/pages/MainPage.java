@@ -6,14 +6,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import static org.junit.Assert.assertEquals;
 
-   @DefaultUrl("http://automationpractice.com/index.php")
+@DefaultUrl("http://automationpractice.com/index.php")
 
-    public class MainPage extends BasePage{
+public class MainPage extends BasePage{
 
     @FindBy(css = "a.login")
     private WebElement signInButton;
@@ -24,7 +27,7 @@ import static org.junit.Assert.assertEquals;
     @FindBy(id = "passwd")
     private WebElement passwordField;
 
-    @FindBy (id="SubmitLogin") 
+    @FindBy (id="SubmitLogin")  
     private WebElement getSignInButtonOnLoginPage;
 
     @FindBy (css ="a[title='Women']")  
@@ -57,13 +60,22 @@ import static org.junit.Assert.assertEquals;
     @FindBy (xpath = "//*[@id=\"center_column\"]/h1/span[2]") ///// TASK
     private WebElement textItemInCart;
 
+    @FindBy(xpath = "//*[@id='center_column']/ul/li")
+    private List<WebElement> moveToItem;
+
+    @FindBy (css = "a[title='Add to cart'][data-id-product]")
+    private List<WebElement> addToCartButtons;
+
+    @FindBy (xpath = "//*[@id='layer_cart']/div[1]/div[2]/div[4]/span/span" )
+    private WebElement continueShoppingButton;
+
     @FindBy(xpath = "//*[@id='create-account_form']/div/p")
     private WebElement createAccountText;
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
-
+   
     public void openMainPage() {
         open();
     }
@@ -71,16 +83,16 @@ import static org.junit.Assert.assertEquals;
     public void clickOnSignInButton() {
         element(signInButton).click();
     }
-   
+
     public void fillEmailAddressField(String email){
         element(emailField).sendKeys(email);
     }
-   
+  
     public void fillPasswordField(String password){
         element(passwordField).sendKeys(password);
     }
 
-    public void clickOnSubmitLoginButton () { 
+    public void clickOnSubmitLoginButton () {  
         element(getSignInButtonOnLoginPage).click();
     }
 
@@ -88,7 +100,7 @@ import static org.junit.Assert.assertEquals;
         element(womenTab).click();
     }
 
-    private List<WebElement> getColorBoxes () {   
+    private List<WebElement> getColorBoxes () {  
         return colorBoxes;
     }
 
@@ -108,7 +120,7 @@ import static org.junit.Assert.assertEquals;
         element(addToCartButton).click();
     }
 
-     public void checkOrangeColorsOnItems () {   
+    public void checkOrangeColorsOnItems () {   
         int counter = 0;
         for (int i =0; 1 < getColorBoxes().size();i++) {
             if (getColorBoxes().get(i).findElements(By.cssSelector("a[style='background:#F39C11;']")).size() == 1) {
@@ -118,8 +130,8 @@ import static org.junit.Assert.assertEquals;
         assertEquals(3, counter);
     }
 
-     public void checkEmailTest () { //////// TASK
-       String textMyAccount = element (myAccount).getText();
+    public void checkEmailTest () { //////// TASK
+      String textMyAccount = element (myAccount).getText();
        Assert.assertEquals("ORDER HISTORY AND DETAILS\n" +
                "MY CREDIT SLIPS\n" +
                "MY ADDRESSES\n" +
@@ -127,7 +139,7 @@ import static org.junit.Assert.assertEquals;
                "MY WISHLISTS",textMyAccount);
     }
 
-     public void checkInvalidEmailTest () { ///// TASK
+    public void checkInvalidEmailTest () { ///// TASK
         String textErrorEmail = element (errorEmail).getText();
         Assert.assertEquals ("Invalid email address.",textErrorEmail);
     }
@@ -139,7 +151,20 @@ import static org.junit.Assert.assertEquals;
      public void checkCartTest () {
         String textProductInCart = element (textItemInCart).getText();
          Assert.assertEquals ("There is 1 product.",textProductInCart);
-    }
+     }
+
+     private List <WebElement> getMoveToItemList () {
+        return addToCartButtons;
+     }
+
+     public void clickOnAddToCartButtonsOnItems (int count) { 
+        for (int i = 0; i < count; i++) {
+            withAction().moveToElement(getMoveToItemList().get(i)).perform(); // элемент из коллекции  moveToItem.get(i)
+            getDriver().findElement(By.cssSelector("a[title='Add to cart'][data-id-product = '" + (i+1) + "']")).click();
+            element(continueShoppingButton).click();
+        }
+
+     }
 
     public void checkText(){
         String text = element(createAccountText).getText();
@@ -148,7 +173,6 @@ import static org.junit.Assert.assertEquals;
         if(matcher.find()){
             System.out.println("FOUND");
         }else {
-            //Если фолс:
             System.out.println("NOT FOUND");
         }
     }
