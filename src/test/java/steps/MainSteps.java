@@ -43,7 +43,7 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void checkOrangeColorsOnItems () {  
+    public void checkOrangeColorsOnItems () { 
         onPage.checkOrangeColorsOnItems();
     }
 
@@ -87,4 +87,9 @@ public class MainSteps extends ScenarioSteps {
     public void checkCartTest () { ////// TASK
         onPage.checkCartTest();
     }
-}
+
+    @Step
+    public void clickOnAddToCartButtonsOnItems (int count) {
+        onPage.clickOnAddToCartButtonsOnItems(count);
+    }
+
