@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,10 +26,10 @@ public class MainPage extends BasePage{
     @FindBy(id = "passwd")
     private WebElement passwordField;
 
-    @FindBy (id="SubmitLogin")  
+    @FindBy (id="SubmitLogin") 
     private WebElement getSignInButtonOnLoginPage;
 
-    @FindBy (css ="a[title='Women']")  
+    @FindBy (css ="a[title='Women']") 
     private WebElement womenTab;
 
     @FindBy (css = "a[style=' style='background:#F39C11;']") 
@@ -75,7 +74,7 @@ public class MainPage extends BasePage{
     public MainPage(WebDriver driver) {
         super(driver);
     }
-   
+
     public void openMainPage() {
         open();
     }
@@ -87,7 +86,7 @@ public class MainPage extends BasePage{
     public void fillEmailAddressField(String email){
         element(emailField).sendKeys(email);
     }
-  
+   
     public void fillPasswordField(String password){
         element(passwordField).sendKeys(password);
     }
@@ -96,7 +95,7 @@ public class MainPage extends BasePage{
         element(getSignInButtonOnLoginPage).click();
     }
 
-    public void clickOnWomenTab() {   
+    public void clickOnWomenTab() {  
         element(womenTab).click();
     }
 
@@ -119,8 +118,10 @@ public class MainPage extends BasePage{
      public void clickOnAddToCartButton () { /////// TASK
         element(addToCartButton).click();
     }
-
-    public void checkOrangeColorsOnItems () {   
+    
+////////////////////////////CHECK/////////////////////////
+    
+    public void checkOrangeColorsOnItems () {  
         int counter = 0;
         for (int i =0; 1 < getColorBoxes().size();i++) {
             if (getColorBoxes().get(i).findElements(By.cssSelector("a[style='background:#F39C11;']")).size() == 1) {
@@ -130,7 +131,7 @@ public class MainPage extends BasePage{
         assertEquals(3, counter);
     }
 
-    public void checkEmailTest () { //////// TASK
+    public void checkSignInWithValidEmailAndPassword () { //////// TASK
       String textMyAccount = element (myAccount).getText();
        Assert.assertEquals("ORDER HISTORY AND DETAILS\n" +
                "MY CREDIT SLIPS\n" +
@@ -139,16 +140,17 @@ public class MainPage extends BasePage{
                "MY WISHLISTS",textMyAccount);
     }
 
-    public void checkInvalidEmailTest () { ///// TASK
+    public void checkInvalidEmailMessage () { ///// TASK
         String textErrorEmail = element (errorEmail).getText();
         Assert.assertEquals ("Invalid email address.",textErrorEmail);
     }
 
-    public void checkWithoutEmailTest () { ////// TASK
+    public void checkSignInWithoutEmailAndPassword () { ////// TASK
         String textWithoutEmail = element (errorEmail).getText();
         Assert.assertEquals ("Authentication failed",textWithoutEmail);
     }
-     public void checkCartTest () {
+    
+     public void checkAddingOneItemToCart  () {
         String textProductInCart = element (textItemInCart).getText();
          Assert.assertEquals ("There is 1 product.",textProductInCart);
      }
@@ -157,7 +159,7 @@ public class MainPage extends BasePage{
         return addToCartButtons;
      }
 
-     public void clickOnAddToCartButtonsOnItems (int count) { 
+     public void clickOnAddToCartButtonsOnItems (int count) { // добавление в корзину через кнопку add to cart
         for (int i = 0; i < count; i++) {
             withAction().moveToElement(getMoveToItemList().get(i)).perform(); // элемент из коллекции  moveToItem.get(i)
             getDriver().findElement(By.cssSelector("a[title='Add to cart'][data-id-product = '" + (i+1) + "']")).click();
