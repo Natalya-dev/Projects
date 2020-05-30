@@ -2,6 +2,7 @@ package steps;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import pages.ContactUsPage;
 import pages.MainPage;
 
 public class MainSteps extends ScenarioSteps {
@@ -43,24 +44,24 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void checkOrangeColorsOnItems () { 
+    public void checkOrangeColorsOnItems () {  
         onPage.checkOrangeColorsOnItems();
     }
 
     @Step
-    public void checkEmailTest () {   /////// TASK
-        onPage.checkEmailTest();
+    public void checkSignInWithValidEmailAndPassword() {   /////// TASK
+        onPage.checkSignInWithValidEmailAndPassword();
     }
 
     @Step
-    public void checkInvalidEmailTest () {  ///// TASK
-        onPage.checkInvalidEmailTest();
+    public void checkInvalidEmailMessage () {  ///// TASK
+        onPage.checkInvalidEmailMessage();
 
     }
 
     @Step
-    public void checkWithoutEmailTest () {  ///// TASK
-        onPage.checkWithoutEmailTest();
+    public void checkSignInWithoutEmailAndPassword() {  ///// TASK
+        onPage.checkSignInWithoutEmailAndPassword();
     }
 
     @Step
@@ -84,12 +85,12 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void checkCartTest () { ////// TASK
-        onPage.checkCartTest();
+    public void checkAddingOneItemToCart () { ////// TASK
+        onPage.checkAddingOneItemToCart();
     }
 
     @Step
     public void clickOnAddToCartButtonsOnItems (int count) {
         onPage.clickOnAddToCartButtonsOnItems(count);
     }
-
+}
