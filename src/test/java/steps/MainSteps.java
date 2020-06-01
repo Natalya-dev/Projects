@@ -39,28 +39,28 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickOnWomenTab () {  
+    public void clickOnWomenTab () { 
         onPage.clickOnWomenTab ();
     }
 
     @Step
-    public void checkOrangeColorsOnItems () {  
+    public void checkOrangeColorsOnItems () { 
         onPage.checkOrangeColorsOnItems();
     }
 
     @Step
-    public void checkSignInWithValidEmailAndPassword() {   /////// TASK
+    public void checkSignInWithValidEmailAndPassword() {   //// TASK
         onPage.checkSignInWithValidEmailAndPassword();
     }
 
     @Step
-    public void checkInvalidEmailMessage () {  ///// TASK
+    public void checkInvalidEmailMessage () {  //// TASK
         onPage.checkInvalidEmailMessage();
 
     }
 
     @Step
-    public void checkSignInWithoutEmailAndPassword() {  ///// TASK
+    public void checkSignInWithoutEmailAndPassword() {  //// TASK
         onPage.checkSignInWithoutEmailAndPassword();
     }
 
@@ -75,22 +75,62 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickOnCasualDressesTab () { ////// TASK
+    public void clickOnCasualDressesTab () { //// TASK
         onPage.clickOnCasualDressesTab();
     }
 
     @Step
-    public void clickOnAddToCartButton () { ////// TASK
+    public void clickOnAddToCartButton () { //// TASK
         onPage.clickOnAddToCartButton();
     }
 
     @Step
-    public void checkAddingOneItemToCart () { ////// TASK
+    public void checkAddingOneItemToCart () { //// TASK
         onPage.checkAddingOneItemToCart();
     }
 
     @Step
     public void clickOnAddToCartButtonsOnItems (int count) {
         onPage.clickOnAddToCartButtonsOnItems(count);
+    }
+
+    @Step
+    public void clickOnProceedToCheckoutButtonOnPopUp () { //// TASK
+        onPage.clickOnProceedToCheckoutButtonOnPopUp ();
+    }
+
+    @Step
+    public void clickOnProceedToCheckoutButtonOnShoppingCartPage () { //// TASK
+        onPage.clickOnProceedToCheckoutButtonOnShoppingCartPage ();
+    }
+
+    @Step
+    public void clickOnProceedToCheckoutButtonOnAddressesPage () { //// TASK
+        onPage.clickOnProceedToCheckoutButtonOnAddressesPage ();
+    }
+
+    @Step
+    public void clickOnCheckBoxIAgreeToTheTermsOfService () { //// TASK
+        onPage.clickOnCheckBoxIAgreeToTheTermsOfService ();
+    }
+
+    @Step
+    public void clickOnProceedToCheckoutButtonOnShippingPage () { //// TASK
+       onPage.clickOnProceedToCheckoutButtonOnShippingPage ();
+    }
+
+    @Step
+    public void clickOnPayByCheckButton () { //// TASK
+        onPage.clickOnPayByCheckButton ();
+    }
+
+    @Step
+    public void clickOnIConfirmMyOrderButton () { //// TASK
+        onPage.clickOnIConfirmMyOrderButton ();
+    }
+
+    @Step
+    public void checkOrderConfirmationMessage () { //// TASK
+        onPage.checkOrderConfirmationMessage ();
     }
 }
