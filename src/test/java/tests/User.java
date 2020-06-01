@@ -1,17 +1,18 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package tests;
 
 import net.thucydides.core.annotations.Steps;
+import steps.ContactUsSteps;
 import steps.MainSteps;
 
-public class User {
+// Описываем пейджы, для удобства
+  public class User {
+
+    // Аннотация:
+    // чтобы серенити мог добавить шаги в репорт при его генерации:
     @Steps
     public MainSteps mainPage;
 
-    public User() {
-    }
+    @Steps
+    public ContactUsSteps contactUsPage;
 }
+
