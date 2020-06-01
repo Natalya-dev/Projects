@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="tests.AddToCartOneItemTest" skipped="0" tests="1" time="0.23" timestamp="2020-05-30 10:56:36"><testcase classname="tests.AddToCartOneItemTest" name="Add to cart one item"><failure message="The page object class pages.ContactUsPage looks dodgy:&#10;This page object does not appear have a constructor that takes a WebDriver parameter" type="net.thucydides.core.pages.WrongPageError">The page object class pages.ContactUsPage looks dodgy:
+This page object does not appear have a constructor that takes a WebDriver parameter</failure><system-err>The page object class pages.ContactUsPage looks dodgy:
+This page object does not appear have a constructor that takes a WebDriver parameter&#13;
+</system-err></testcase></testsuite>

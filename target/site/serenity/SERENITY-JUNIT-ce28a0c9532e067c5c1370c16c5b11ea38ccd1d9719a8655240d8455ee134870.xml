@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="tests.EmailTest1" skipped="0" tests="1" time="18.03" timestamp="2020-05-24 05:45:05"><testcase classname="tests.EmailTest1" name="Without email test"><failure message="expected:&lt;A[uthentication failed]&gt; but was:&lt;A[n email address required.]&gt;" type="org.junit.ComparisonFailure">expected:&lt;A[uthentication failed]&gt; but was:&lt;A[n email address required.]&gt;</failure><system-err>expected:&lt;A[uthentication failed]&gt; but was:&lt;A[n email address required.]&gt;&#13;
+pages.MainPage.checkWithoutEmailTest(MainPage.java:132)&#13;
+steps.MainSteps.checkWithoutEmailTest(MainSteps.java:63)&#13;
+tests.EmailTest1.withoutEmailTest(EmailTest1.java:36)&#13;
+</system-err></testcase></testsuite>
