@@ -49,18 +49,18 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void checkSignInWithValidEmailAndPassword() {   /////// TASK
+    public void checkSignInWithValidEmailAndPassword() {   //// TASK
         onPage.checkSignInWithValidEmailAndPassword();
     }
 
     @Step
-    public void checkInvalidEmailMessage () {  ///// TASK
+    public void checkInvalidEmailMessage () {  //// TASK
         onPage.checkInvalidEmailMessage();
 
     }
 
     @Step
-    public void checkSignInWithoutEmailAndPassword() {  ///// TASK
+    public void checkSignInWithoutEmailAndPassword() {  //// TASK
         onPage.checkSignInWithoutEmailAndPassword();
     }
 
@@ -75,17 +75,17 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickOnCasualDressesTab () { ////// TASK
+    public void clickOnCasualDressesTab () { //// TASK
         onPage.clickOnCasualDressesTab();
     }
 
     @Step
-    public void clickOnAddToCartButton () { ////// TASK
+    public void clickOnAddToCartButton () { //// TASK
         onPage.clickOnAddToCartButton();
     }
 
     @Step
-    public void checkAddingOneItemToCart () { ////// TASK
+    public void checkAddingOneItemToCart () { //// TASK
         onPage.checkAddingOneItemToCart();
     }
 
@@ -95,7 +95,7 @@ public class MainSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickOnProceedToCheckoutButtonOnPopUp () { ///// TASK
+    public void clickOnProceedToCheckoutButtonOnPopUp () { //// TASK
         onPage.clickOnProceedToCheckoutButtonOnPopUp ();
     }
 
