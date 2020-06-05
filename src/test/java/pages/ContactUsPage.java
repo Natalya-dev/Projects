@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
  public class ContactUsPage extends BasePage {
 
-    @FindBy(id = "uniform-id_contact") //xpath = "//select=[@class='form-control']"
+    @FindBy(id = "uniform-id_contact")
     private WebElement subjectHeadingDropDownButton;
 
     @FindBy (id = "id_contact")
@@ -30,8 +30,11 @@ import org.openqa.selenium.support.FindBy;
     @FindBy (id = "message")
     private WebElement messageField;
 
-    @FindBy (css = "a[title='Contact Us']")  //??
+    @FindBy (css = "a[title='Contact Us']")  // button
     private WebElement contactUsButton;
+
+    @FindBy (xpath = "//*[@id='block_various_links_footer']/ul/li[5]") //delete
+    private WebElement button;
 
     protected ContactUsPage(WebDriver driver) {
         super(driver);
@@ -65,7 +68,7 @@ import org.openqa.selenium.support.FindBy;
    public void clickOnMessageField (String message) {
         element(messageField).sendKeys(message);
 
-}
+   }
 
     public void clickOnContactUsButton() {
         element (contactUsButton).click();
