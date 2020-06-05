@@ -13,19 +13,11 @@ import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertEquals;
 
-// Стандартный адрес:
 @DefaultUrl("http://automationpractice.com/index.php")
 
-// Наследуем бейз пейдж:
 public class MainPage extends BasePage{
 
-    //// Локаторы:
-
-    // Аннтоация:
-    // указываем локатор
-    // в данном случае сss
     @FindBy(css = "a.login")
-    // Указываем веб элемент и его название:
     private WebElement signInButton;
 
     @FindBy(id = "email")
@@ -34,37 +26,37 @@ public class MainPage extends BasePage{
     @FindBy(id = "passwd")
     private WebElement passwordField;
 
-    @FindBy (id="SubmitLogin")  //////new//////
+    @FindBy (id="SubmitLogin")  
     private WebElement getSignInButtonOnLoginPage;
 
-    @FindBy (css ="a[title='Women']")  /////new
+    @FindBy (css ="a[title='Women']")  
     private WebElement womenTab;
 
-    @FindBy (css = "a[style=' style='background:#F39C11;']") ////new
+    @FindBy (css = "a[style=' style='background:#F39C11;']") 
     private WebElement orangeBox;
 
-    @FindBy (css ="ul[class='color_to_pick_list clearfix']") //////new
+    @FindBy (css ="ul[class='color_to_pick_list clearfix']") 
     private List<WebElement> colorBoxes;
 
-    @FindBy (css = "[class='sf-with-ul']") ///// TASK
+    @FindBy (css = "[class='sf-with-ul']") //// TASK
     private WebElement womenButton;
 
-    @FindBy (css = "[class=\"row addresses-lists\"]") /////// TASK
+    @FindBy (css = "[class=\"row addresses-lists\"]") //// TASK
     private WebElement myAccount;
 
-    @FindBy (xpath = "//div[@class='alert alert-danger']/ol/li")  ////// TASK
+    @FindBy (xpath = "//div[@class='alert alert-danger']/ol/li")  //// TASK
     private WebElement errorEmail;
 
-    @FindBy (xpath = "//*[@id='categories_block_left']/div/ul/li[2]") ////// TASK
+    @FindBy (xpath = "//*[@id='categories_block_left']/div/ul/li[2]") //// TASK
     private  WebElement dressesTab;
 
-    @FindBy (xpath = "//*[@id='categories_block_left']/div/ul/li[1]/a") ///// TASK
+    @FindBy (xpath = "//*[@id='categories_block_left']/div/ul/li[1]/a") //// TASK
     private WebElement casualDressesTab;
 
-    @FindBy (xpath = "//*[@id='center_column']/ul/li/div/div[2]/div[2]/a[1]") ///// TASK
+    @FindBy (xpath = "//*[@id='center_column']/ul/li/div/div[2]/div[2]/a[1]") //// TASK
     private  WebElement addToCartButton;
 
-    @FindBy (xpath = "//*[@id=\"center_column\"]/h1/span[2]") ///// TASK
+    @FindBy (xpath = "//*[@id=\"center_column\"]/h1/span[2]") //// TASK
     private WebElement textItemInCart;
 
     @FindBy(xpath = "//*[@id='center_column']/ul/li")
@@ -103,42 +95,27 @@ public class MainPage extends BasePage{
     @FindBy (css = "[class='alert alert-success']") //// TASK
     private WebElement yourOrderOnMyStoreText;
 
-            //////////////////////////////////////////////////////////////////////////////
-
-    // Создается автоматом после наследования бейз пейджа:
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    //// Методы:
-
-    //Открытия страницы:
     public void openMainPage() {
         open();
     }
 
-    // Нажатия кнопки указанного элемента:
     public void clickOnSignInButton() {
         element(signInButton).click();
     }
 
-    // Записи в поле емеила почты нашего аккаунта:
-    /*public void fillEmailAddress(String email){
-        element(emailField).sendKeys(email);
-    }
-
-     */
-
-    // Вводим адрес:
     public void fillEmailAddressField(String email){
         element(emailField).sendKeys(email);
     }
-    // Вводим пароль:
+    
     public void fillPasswordField(String password){
         element(passwordField).sendKeys(password);
     }
 
-    public void clickOnSubmitLoginButton () {  //////////new
+    public void clickOnSubmitLoginButton () {  
         element(getSignInButtonOnLoginPage).click();
     }
 
@@ -154,17 +131,18 @@ public class MainPage extends BasePage{
         element (womenButton).click();
     }
 
-    public void clickOnDressesTab () { //////  TASK
+    public void clickOnDressesTab () { //// TASK
         element(dressesTab).click();
     }
 
-     public void clickOnCasualDressesTab () { ////// TASK
+     public void clickOnCasualDressesTab () { //// TASK
         element(casualDressesTab).click();
     }
 
-     public void clickOnAddToCartButton () { /////// TASK
+     public void clickOnAddToCartButton () { //// TASK
         element(addToCartButton).click();
     }
+    
      public void clickOnProceedToCheckoutButtonOnPopUp () { ///// TASK
         element (proceedToCheckoutButtonOnPopUp).click();
      }
@@ -205,7 +183,7 @@ public class MainPage extends BasePage{
         assertEquals(3, counter);
     }
 
-    public void checkSignInWithValidEmailAndPassword () { //////// TASK
+    public void checkSignInWithValidEmailAndPassword () { //// TASK
       String textMyAccount = element (myAccount).getText();
        Assert.assertEquals("ORDER HISTORY AND DETAILS\n" +
                "MY CREDIT SLIPS\n" +
@@ -214,15 +192,16 @@ public class MainPage extends BasePage{
                "MY WISHLISTS",textMyAccount);
     }
 
-    public void checkInvalidEmailMessage () { ///// TASK
+    public void checkInvalidEmailMessage () { //// TASK
         String textErrorEmail = element (errorEmail).getText();
         Assert.assertEquals ("Invalid email address.",textErrorEmail);
     }
 
-    public void checkSignInWithoutEmailAndPassword () { ////// TASK
+    public void checkSignInWithoutEmailAndPassword () { //// TASK
         String textWithoutEmail = element (errorEmail).getText();
         Assert.assertEquals ("Authentication failed",textWithoutEmail);
     }
+    
      public void checkAddingOneItemToCart  () {
         String textProductInCart = element (textItemInCart).getText();
          Assert.assertEquals ("There is 1 product.",textProductInCart);
@@ -240,21 +219,14 @@ public class MainPage extends BasePage{
         }
 
      }
-
-    //Проверяем элемент с текстом при помощи регулярного выражения:
-    // Проверяем что строка начинается с Please (space) enter (space)^
+    
     public void checkText(){
-        // Обьявляем текст, берем значение из элемента:
         String text = element(createAccountText).getText();
-        //Создаем паттерн и компилируем:
         Pattern pattern = Pattern.compile("(^Please\\senter\\s)");
         Matcher matcher = pattern.matcher(text);
-        // Условие, проверяет по тексту регулярное выражение и выдает тру(нашел) фолс(не нашел)
         if(matcher.find()){
-            //Если тру:
             System.out.println("FOUND");
         }else {
-            //Если фолс:
             System.out.println("NOT FOUND");
         }
     }
