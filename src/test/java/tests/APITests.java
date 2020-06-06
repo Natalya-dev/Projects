@@ -4,7 +4,6 @@ import Helper.DataUser;
 import com.jayway.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-
 import static com.jayway.restassured.RestAssured.given;
 
 public class APITests {

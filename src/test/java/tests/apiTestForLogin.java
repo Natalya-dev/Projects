@@ -2,7 +2,7 @@ package tests;
 
 import Helper.PropertiesHelper;
 import com.jayway.restassured.response.Response;
-import io.restassured.path.xml.XmlPath;
+import com.jayway.restassured.path.xml.XmlPath;
 import org.junit.Assert;
 import org.junit.Test;
 

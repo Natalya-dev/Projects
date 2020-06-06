@@ -33,10 +33,8 @@ import org.openqa.selenium.support.FindBy;
     @FindBy (css = "a[title='Contact Us']")  // button
     private WebElement contactUsButton;
 
-    @FindBy (xpath = "//*[@id='block_various_links_footer']/ul/li[5]") //delete
-    private WebElement button;
 
-    protected ContactUsPage(WebDriver driver) {
+    public ContactUsPage(WebDriver driver) {
         super(driver);
 
         }

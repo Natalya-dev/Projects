@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="tests.ContactUsTest" skipped="0" tests="1" time="0.25" timestamp="2020-05-30 10:17:19"><testcase classname="tests.ContactUsTest" name="Contact us test"><failure message="The page object class pages.ContactUsPage looks dodgy:&#10;This page object does not appear have a constructor that takes a WebDriver parameter" type="net.thucydides.core.pages.WrongPageError">The page object class pages.ContactUsPage looks dodgy:
-This page object does not appear have a constructor that takes a WebDriver parameter</failure><system-err>The page object class pages.ContactUsPage looks dodgy:
-This page object does not appear have a constructor that takes a WebDriver parameter&#13;
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="tests.ContactUsTest" skipped="0" tests="1" time="10.83" timestamp="2020-06-06 10:06:48"><testcase classname="tests.ContactUsTest" name="Contact us test"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver&#13;
+pages.MainPage.openMainPage(MainPage.java:103)&#13;
+steps.MainSteps.openMainPage(MainSteps.java:18)&#13;
+tests.ContactUsTest.contactUsTest(ContactUsTest.java:9)&#13;
 </system-err></testcase></testsuite>
