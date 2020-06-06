@@ -6,40 +6,40 @@ import pages.ContactUsPage;
 
 public class ContactUsSteps  extends ScenarioSteps {
 
-    private ContactUsPage onPage;
+    private ContactUsPage onContactPage;
 
     @Step
     public void clickOnSubjectHeadingDropDownButton  (String subjectValue) {
-        onPage.clickOnSubjectHeadingDropDownButton (subjectValue);
+        onContactPage.clickOnSubjectHeadingDropDownButton (subjectValue);
     }
 
     @Step
     public void fillInEmailAddressField (String email){
-        onPage.fillInEmailAddressField (email);
+        onContactPage.fillInEmailAddressField (email);
     }
 
     @Step
     public void clickOnOrderReferenceDropDownButton (String order){
-        onPage.clickOnOrderReferenceDropDownButton (order);
+        onContactPage.clickOnOrderReferenceDropDownButton (order);
     }
 
     @Step
     public void clickOnAttachFiledButton(String pathToFile) {
-        onPage.clickOnAttachFiledButton (pathToFile);
+        onContactPage.clickOnAttachFiledButton (pathToFile);
     }
     @Step
     public void clickOnSendButton () {
-        onPage.clickOnSendButton();
+        onContactPage.clickOnSendButton();
     }
 
     @Step
     public  void clickOnMessageField (String message) {
-        onPage.clickOnMessageField(message);
+        onContactPage.clickOnMessageField(message);
     }
 
     @Step
     public void clickOnContactUsButton () {
-       onPage.clickOnContactUsButton ();
+        onContactPage.clickOnContactUsButton ();
     }
 }
 

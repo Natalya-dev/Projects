@@ -14,7 +14,7 @@ public class LoginTest extends SampleTest {
         user.mainPage.clickOnSignInButton();
         user.mainPage.fillEmailAddressField(PropertiesHelper.INSTANCE.getProperties("email"));
         user.mainPage.fillPasswordField(PropertiesHelper.INSTANCE.getProperties("password"));
-        user.mainPage.checkText(); // ?
+        user.mainPage.checkText();
     }
 }
 
