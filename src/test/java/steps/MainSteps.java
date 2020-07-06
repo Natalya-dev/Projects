@@ -6,7 +6,6 @@ import pages.ContactUsPage;
 import pages.MainPage;
 
 public class MainSteps extends ScenarioSteps {
-
     private MainPage onPage;
 
     @Step

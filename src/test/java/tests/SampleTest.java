@@ -16,7 +16,7 @@ import org.openqa.selenium.WebDriver;
     
     @Steps
     public User user;
-
+     
     @After
     public void tearDown() {
         driver.quit();

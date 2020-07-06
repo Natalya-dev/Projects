@@ -14,9 +14,7 @@ import java.util.regex.Pattern;
 import static org.junit.Assert.assertEquals;
 
 @DefaultUrl("http://automationpractice.com/index.php")
-
 public class MainPage extends BasePage{
-
     @FindBy(css = "a.login")
     // Указываем веб элемент и его название:
     private WebElement signInButton;
